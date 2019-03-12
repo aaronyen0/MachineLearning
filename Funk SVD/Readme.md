@@ -5,9 +5,11 @@ Funk SVD是一個經典的稀疏矩陣分解的方法，他最早公開在Simon 
 
 ## [Techniques]
 
-假設今天有一個`R(m*n)，其中m為User的總數，n為Item的個數`，定義R(i,j)：User(i)對Item(j)的評分。可以合理的猜測，當User和Item數量夠多時，矩陣R會是一個稀疏矩陣。<br><br>
+假設今天有一個`矩陣R(m * n)，其中m為User的總數，n為Item的個數`，定義R(i, j)：User(i)對Item(j)的評分。可以合理的猜測，當User和Item數量夠多時，矩陣R會是一個稀疏矩陣。<br><br>
 Funk SVD方法中，假定User和Item可以用一些潛在類別作為分類依據，下圖假設潛在類別為3類：<br><br>
 ![](https://github.com/worcdlo/Machine-Learning/blob/master/Funk%20SVD/Equ4.gif)<br><br>
-令`矩陣R可以分解為P(m*3) * Q(3*n)`，<br>
-此時P(i,:)可視為User(i)對各類別的偏好；Q(:,j)可視為Item(j)受到各類別的影響程度，<br>
-因此R(i,j) = <P(i,:), Q(:,j)>，便是User(i)對Item(j)的整體評價。<br>
+令`矩陣R可以分解為P(m * 3) * Q(3 * n)`，<br>
+此時P(i, :)可視為User(i)對各類別的偏好；Q(:, j)可視為Item(j)受到各類別的影響程度，<br>
+因此R(i, j) = <P(i, :), Q(:, j)>，便是User(i)對Item(j)的整體評價。<br><br>
+值得注意的是，`矩陣R中有許多的？，代表了該格沒有任何資料`，
+
