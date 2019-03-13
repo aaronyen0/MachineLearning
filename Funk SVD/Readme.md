@@ -44,13 +44,13 @@ Funk SVD方法中，假定User和Item可以用一些潛在類別作為分類依�
 #### [正則化(regularization)]
 在維基百科的[Matrix factorization (recommender systems)](https://en.wikipedia.org/wiki/Matrix_factorization_(recommender_systems))或是很多文章中都有提到，增加潛在因子的數量將改善個性化及預測品質，但當參數過多時，overfitting的問題就隨之而來，一種常見的解法是在目標函式中加入regularization terms，如下圖：<br>
 ![](https://github.com/worcdlo/Machine-Learning/blob/master/Funk%20SVD/Equ6.gif)<br>
-本式包住矩陣P及Q的可以是[Frobenius norm或其他](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm)，假設在這邊是Frobenius norm，我們可以注意到，當P或Q的某些元素過大或是過小時，會造成SSE急遽的增長，與我們的最小化SSE的目標相牴觸，進而抑制不讓元素異常過大或過小(也就是減緩fitting函式造成的異常數值)。<br>
+本式包住矩陣P及Q的可以是[Frobenius norm或其他norm](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm)，這邊假設是Frobenius norm，我們可以注意到，當P或Q的某些元素過大或是過小時，會造成SSE急遽的增長，與我們的最小化SSE的目標相牴觸，進而抑制不讓元素異常過大或過小(也就是減緩fitting函式造成的異常數值)。<br>
 關於正則化的直觀理解，可以詳細閱讀[The Problem of Overfitting, Cost Function, ...](https://medium.com/@ken90242/machine-learning%E5%AD%B8%E7%BF%92%E6%97%A5%E8%A8%98-coursera%E7%AF%87-week-3-4-the-c05b8ba3b36f)，該文章用了實例，讓我們直覺的認知到正則化的影響。<br>
 
         # 那篇文章中有一段我也覺得值得特別深思的問題，該文作者提到：
-            我在學習正規化的時候，
-            對於為什麼只是加上個正規多項式就可以改善overfitting感到非常疑惑，
-            畢竟我們根本不知道要降低哪一個θ值(feature)的影響力啊...
+            「我在學習正規化的時候，
+              對於為什麼只是加上個正規多項式就可以改善overfitting感到非常疑惑，
+              畢竟我們根本不知道要降低哪一個θ值(feature)的影響力啊」
             
             該文對此也有一番獨到看法，但我覺得那個解釋很奇怪...
             
