@@ -81,7 +81,7 @@ Funk SVD方法中，假定User和Item可以用一些潛在類別作為分類依�
 其中μ在該式表示整體偏差、大寫U代表某個User的偏差、大寫I代表某個Item的偏差。<br>
 如果有一些統計學的知識的話，這個模型幾乎和2因子ANOVA(two-way ANOVA)一模一樣，<br>
 唯一的差別就是交叉項的部分換成了潛在類別的內積，下面是two-way ANOVA的模型：<br>
-![](https://github.com/worcdlo/Machine-Learning/blob/master/Funk%20SVD/Equ8.gif)<br><br>
+![](https://github.com/worcdlo/Machine-Learning/blob/master/Funk%20SVD/Equ8.GIF)<br><br>
 
 #### [隱式反饋 & SVD++]
 前述的所有模型，都需要具體的評分才能反應在模型參數上，
