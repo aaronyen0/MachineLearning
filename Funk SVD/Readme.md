@@ -15,33 +15,56 @@ Funk SVD方法中，假定User和Item可以用一些潛在類別作為分類依�
 上式估計出來的R便是Funk SVD方法下，User(i)對Item(j)的估計評價。<br>
 
 ### [目標函數]
-有了上節的模型後，剩下的便是想辦法調整P和Q的係數，使得模型出來的估計值可以逼近真值，<br>
-機器學習中調整參數最常見的方法，便是定義目標函數，或者稱為Loss funcion<br>
-而Funk SVD用來估計P和Q所使用的Loss funcion就是最小平方法，如下圖：<br>
+有了上節的模型後，剩下的便是想辦法調整P和Q的係數，使得模型出來的估計值可以逼近真值，機器學習中調整參數最常見的方法，便是定義目標函數，或者稱為Loss funcion，而Funk SVD用來估計P和Q所使用的Loss funcion就是最小平方法，如下圖：<br>
 ![](https://github.com/worcdlo/Machine-Learning/blob/master/Funk%20SVD/Equ3.gif)<br>
 有了Loss funcion，接著便能透過一些數值方法，如梯度下降法，尋找Loss function的極值，最終求得P和Q的估計值<br>
 
-    # 個人對於本模型中維度的看法
+    # 個人對本模型參數維度的一些想法
     
-        從維度的角度來看，總共有|M|個待估計的點(R中非空元素個數)，
+        Funk SVD總共有|M|個待估計的點(R中非空元素個數)，
         而參數個數為：n * classNum + m * classNum (|P| + |Q|)，
-        最小平方法其實就是用這些參數組成了|M|個Rhat，以norm2距離去逼近相對應的R，
-        若|M|的數量過少，直覺來看應該可以得到一組甚至無數組(參數間線性相依)可以使SSE為0的解，
+        最小平方法也可以說就是用這些參數構成|M|個Rhat，以norm2距離去逼近相對應的R，
+        若|M|的數量過少，直覺來看可以得到多組甚至無數組(參數間線性相依)可以使SSE為0的解。
         例如：User和Item的個數都是1，假設classNum = 3，則|P|+|Q| = 3 + 3 = 6，
         用6個參數去估計一個R，會有無數種P,Q組合，都可以使 Rhat == R，
         但這些組合是否還有參考價值就相當耐人尋味。
         
-        我目前正在學習Coursera的機器學習課程(華盛頓大學開設)，
+        我目前正在觀看Coursera的機器學習課程(華盛頓大學)，
         課程中先後提到linear regression及logistic regression，
         兩者的上課範例都遇到參數比目標式更多的狀況，
         但是課程影片卻沒有提出來討論，
         連課後題目都寫參數越多模型效果越好，
         事實上在使用graphlab建模時，
-        都有跳出參數過多模型不准的警告，
+        兩者都跳出參數過多模型不准的警告，
         如果計算linear regression並不是用梯度法而是使用反逆矩陣投影的話，
         就會因為linear dependent導致沒有反逆矩陣而出現error，
         沒提出這些是個人覺得這門課較嚴重的缺點之一。
 <br><br>
-### [避免過度擬合的調整模型]
-  
+### [模型調整]
+#### [正則化(regularization)]
+在維基百科的[Matrix factorization (recommender systems)](https://en.wikipedia.org/wiki/Matrix_factorization_(recommender_systems))或是很多文章中都有提到，增加潛在因子的數量將改善個性化及預測品質，但當參數過多時，overfitting的問題就隨之而來，一種常見的解法是在目標函式中加入regularization terms，如下圖：<br>
+![](https://github.com/worcdlo/Machine-Learning/blob/master/Funk%20SVD/Equ6.gif)<br>
+本式包住矩陣P及Q的是[Frobenius norm](https://en.wikipedia.org/wiki/Matrix_norm#Frobenius_norm)，我們可以注意到，當P或Q的某些元素過大或是過小時，會造成SSE急遽的增長，與我們的最小化SSE的目標相牴觸，進而抑制不讓元素異常過大或過小(某方面來說就是減緩fitting函式造成的異常數值)。<br>
+關於正化的直觀理解，可以詳細閱讀[The Problem of Overfitting, Cost Function, ...](https://medium.com/@ken90242/machine-learning%E5%AD%B8%E7%BF%92%E6%97%A5%E8%A8%98-coursera%E7%AF%87-week-3-4-the-c05b8ba3b36f)，該文章用了實例，讓我們直覺的認知到正則化的影響。<br>
 
+        # 那篇文章中有一段我也覺得特別值得深思的猜想，該文作者提到：
+            我在學習正規化的時候，
+            對於為什麼只是加上個正規多項式就可以改善overfitting感到非常疑惑，
+            畢竟我們根本不知道要降低哪一個θ值(feature)的影響力啊...
+            
+            該文對此也有一番獨到看法，但我覺得該解釋很奇怪
+            
+            關於這個問題我也提出一些見解(以下配合該文使用θ當作可調整的模型參數)：
+                不論原始模型或調整後的模型，學習的過程就是在最小化目標函式(SSE)，
+                想像在原始模型中為了去match每個點，某些θ可能非常大或是非常小，
+                造成整個模型展開後形狀過度扭曲(overfitting)，
+                這是我們今天不樂見的結果，
+                因此我們才在模型中加入正則項去抑制θ。
+                
+                我們的正則項是採用norm2距離來當作損失，
+                其實我並不覺得這個正則項一視同仁的打壓所有的θ，
+                由於norm2的數學性質，
+                加入正則項後，
+                對太大或是太小θ的影響比接近0的θ高出許多。
+                
+ <br><br>           
