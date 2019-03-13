@@ -73,3 +73,13 @@ Funk SVD方法中，假定User和Item可以用一些潛在類別作為分類依�
             這時就有另一個值得深思的問題，
             到底怎麼才能找到恰當的係數呢？
  <br><br>           
+#### [偏置]
+迴顧最開始的模型：<br>
+![](https://github.com/worcdlo/Machine-Learning/blob/master/Funk%20SVD/Equ5.gif)<br>
+所有的估計值都是User(i)和Item(j)之間的交互關係，實際上有很多性質可能是某些Item或是某些User獨有的，例如某些User給的評分整體就是比較低，或是某些Item製作精美，所有人的給予很高的評價，這些都可能是該User或是該Item獨有的性質，因此也有人將估計函式進一步擴增為：<br>
+![](https://github.com/worcdlo/Machine-Learning/blob/master/Funk%20SVD/Equ7.gif)<br>
+其中μ在該式表示整體偏差、大寫U代表某個User的偏差、大寫I代表某個Item的偏差。<br><br>
+
+#### [隱式反饋 & SVD++]
+前述的所有模型，都需要具體的評分才能反應在模型參數上，
+[待補]
