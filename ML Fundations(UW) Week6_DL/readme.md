@@ -7,4 +7,4 @@
 
 下列依序是我在這堂課中所掌握或特別感興趣的一些內容：
 
-- [The Simplest Deep Learning](https://github.com/worcdlo/Machine-Learning/blob/master/ML%20Fundations(UW)%20Week6_DL/Note1.md)
+- [a simple example to understand Deep Learning](https://github.com/worcdlo/Machine-Learning/blob/master/ML%20Fundations(UW)%20Week6_DL/Note1.md)
