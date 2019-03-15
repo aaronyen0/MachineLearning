@@ -28,7 +28,7 @@
     ![](https://github.com/worcdlo/Machine-Learning/blob/master/ML%20Fundations(UW)%20Week6_DL/note1.GIF)
        ```
        在很多的研究中都曾表明，神經網路在不同深度各有不同用途，
-       通常越淺層的部分，擷取得特徵偏向材質、邊角等較通用型態，
+       通常越淺層的部分，擷取得特徵偏向材質、邊角等通用的型態，
        而越靠近底層的參數，擷取的特徵偏向個別類別獨有的。
        因此在使用Transfer learning時，我們常常會運用這個特性，
        只替換最底層的特徵，留下前面訓練好的數據
