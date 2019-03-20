@@ -21,3 +21,15 @@ Logistic Regression Model被定義為： `Y_i之間彼此獨立，且Y_i滿足Be
 
 ## Statistical Inference
 
+由於Y_i之間彼此獨立，又Y_i滿足Bernoulli(p_i)分配，很直覺的想法就是透過MLE找出beta的估計值。
+
+
+![](https://github.com/worcdlo/MachineLearning/blob/master/Models%20For%20Discrete%20Choice/logit6.GIF)
+
+由於上式求極值並不是一件容易的事情，通常這種情況下的Likelihood function會取log，將乘法運算化為加法運算。
+
+![](https://github.com/worcdlo/MachineLearning/blob/master/Models%20For%20Discrete%20Choice/logit7.GIF)
+
+為了取極值，將上式微分之後變為：
+
+![](https://github.com/worcdlo/MachineLearning/blob/master/Models%20For%20Discrete%20Choice/logit8.GIF)
