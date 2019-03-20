@@ -34,4 +34,4 @@ Logistic Regression Model被定義為： `Y_i之間彼此獨立，且Y_i滿足Be
 
 ![](https://github.com/worcdlo/MachineLearning/blob/master/Models%20For%20Discrete%20Choice/logit8.GIF)
 
-便能透過牛頓法或是梯度下降法等得到最大的概似的Beta估計值。
+便能透過牛頓法或是梯度下降法，得到最大的概似的Beta估計值。
