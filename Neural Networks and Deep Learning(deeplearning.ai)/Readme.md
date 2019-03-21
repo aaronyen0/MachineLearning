@@ -2,7 +2,7 @@
 
 ## Introduction
 - Foundation of Neural Networks and Deep Learning
-    - HoW to build a network?
+    - How to build a network?
     - cat recognizer
 - Improving Deep Neural Networks: Hyperparameter tuning, Rugularization and Optimization
     - perform well
