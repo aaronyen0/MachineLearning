@@ -1,16 +1,17 @@
 # Neural networks: Learning very non-linear features
 
-![](https://github.com/worcdlo/MachineLearning/tree/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier0.GIF)
+![](https://github.com/worcdlo/MachineLearning/blob/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier0.GIF)
 
-![](https://github.com/worcdlo/MachineLearning/tree/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier3.GIF)
+![](https://github.com/worcdlo/MachineLearning/blob/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier3.GIF)
 
-![](https://github.com/worcdlo/MachineLearning/tree/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier4.GIF)
+![](https://github.com/worcdlo/MachineLearning/blob/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier4.GIF)
 
-![](https://github.com/worcdlo/MachineLearning/tree/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier1.GIF)
+![](https://github.com/worcdlo/MachineLearning/blob/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier1.GIF)
 
-![](https://github.com/worcdlo/MachineLearning/tree/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier5.GIF)
+![](https://github.com/worcdlo/MachineLearning/blob/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier5.GIF)
 
-![](https://github.com/worcdlo/MachineLearning/tree/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier6.GIF)
+![](https://github.com/worcdlo/MachineLearning/blob/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Linear%20Classifier6.GIF)
+
 
 `圖片是用HackMD載入mermaid畫的，目前沒找到如何畫出直線。
 另外把z的數值直接代入模型中，會發現無論參數怎麼調，都無法湊出滿足XOR的解。
