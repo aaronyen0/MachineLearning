@@ -87,7 +87,7 @@ User Age|Ad ID|...|Click
 - Computation
 - Algorithms
     - 有很多創新演算法讓訓練速度更快
-    - 如用 ReLU function 取代 sigmoid function，解決了sigmoid function在離0比較遠的地方，梯度太小造成參數收斂太慢的問題。<br> 
+    - 如用 <font color=red size = 4>ReLU function</font> 取代 <font color=blue size = 4>sigmoid function</font>，解決了sigmoid function在離0比較遠的地方，梯度太小造成參數收斂太慢的問題。<br> 
     ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L1_9.GIF)
     - 設計良好的演算法，可以推進實驗循環的速度。<br>
     ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L1_10.GIF)
