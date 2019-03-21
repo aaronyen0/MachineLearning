@@ -10,3 +10,5 @@
 下列依序是我在這堂課中所掌握或特別感興趣的一些內容：
 
 - [A Simple Example To Understand Deep Learning](https://github.com/worcdlo/MachineLearning/blob/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Note1.md)
+
+- [Deep Learning Score Card](https://github.com/worcdlo/MachineLearning/blob/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Note2.md)
