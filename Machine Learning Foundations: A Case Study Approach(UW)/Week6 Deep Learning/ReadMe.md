@@ -9,4 +9,4 @@
 
 下列依序是我在這堂課中所掌握或特別感興趣的一些內容：
 
-- [A Simple Example To Understand Deep Learning](https://github.com/worcdlo/Machine-Learning/blob/master/ML%20Fundations(UW)%20Week6_DL/Note1.md)
+- [A Simple Example To Understand Deep Learning](https://github.com/worcdlo/MachineLearning/blob/master/Machine%20Learning%20Foundations:%20A%20Case%20Study%20Approach(UW)/Week6%20Deep%20Learning/Note1.md)
