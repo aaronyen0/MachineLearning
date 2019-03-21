@@ -4,8 +4,8 @@
 
 假設下圖紅點表示房屋面積跟價格的關係，假設我們今天用一條直線去fit那些點，因此可以得到橘線，我又合理的判斷價格不可能低於0，因此假設當橘線碰到x軸時，的價格通通變為0，我們將這條橘線可以用下列的function表達。
 
-$f(x) = max(0, \  \beta_0 + \beta_1 x)$
 ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L1_1.GIF)
+
 ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L1_2.GIF)
 
 我們可以換一個方式想像，假設這個函式就是一個最簡單的神經網路，如下圖：
@@ -86,9 +86,9 @@ User Age|Ad ID|...|Click
 - Computation
 - Algorithms
     - 有很多創新演算法讓訓練速度更快
-    - 如用 ReLU function 取代 sigmoid function，解決了sigmoid function在離0比較遠的地方，梯度太小造成參數收斂太慢的問題。 
+    - 如用 ReLU function 取代 sigmoid function，解決了sigmoid function在離0比較遠的地方，梯度太小造成參數收斂太慢的問題。<br> 
     ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L1_9.GIF)
-    - 設計良好的演算法，可以推進實驗循環的速度。
+    - 設計良好的演算法，可以推進實驗循環的速度。<br>
     ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L1_10.GIF)
 
 
