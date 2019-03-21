@@ -1,5 +1,7 @@
 # [Neural Networks and Deep Learning(deeplearning.ai)](https://www.coursera.org/learn/neural-networks-deep-learning/)
 
+`本項目皆為個人修課筆記，如有著作權問題，請務必告知，謝謝！`
+
 ## Introduction
 - Foundation of Neural Networks and Deep Learning
     - How to build a network?
