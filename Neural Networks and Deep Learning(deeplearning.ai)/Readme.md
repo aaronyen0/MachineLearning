@@ -1,4 +1,4 @@
-# Neural Networks and Deep Learning(deeplearning.ai)
+# [Neural Networks and Deep Learning(deeplearning.ai)](https://www.coursera.org/learn/neural-networks-deep-learning/)
 
 ## Introduction
 - Foundation of Neural Networks and Deep Learning
