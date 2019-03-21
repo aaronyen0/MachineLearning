@@ -51,6 +51,7 @@ Image, Radar info|Position of other cars|Autunomous driving|hybrid neural networ
 <br>
 
 **Structured Data**
+
 基本上就是資料庫的資料，也就是每個一特徵都是定義的好資料，如：
 
 Area|#bedrooms|...|Price
