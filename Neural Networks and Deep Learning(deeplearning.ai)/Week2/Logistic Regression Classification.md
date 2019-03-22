@@ -92,12 +92,12 @@ Cost function在衡量整體模型的訓練效果，這邊採用：
 - [**凸函數 - 線代啟示錄**](https://ccjou.wordpress.com/2013/08/27/%E5%87%B8%E5%87%BD%E6%95%B8/)
 - [**最佳化理論與正定矩陣 - 線代啟示錄**](https://ccjou.wordpress.com/2009/10/06/%E6%9C%80%E4%BD%B3%E5%8C%96%E5%95%8F%E9%A1%8C%E8%88%87%E6%AD%A3%E5%AE%9A%E7%9F%A9%E9%99%A3/)
 
-推薦：[**線代啟示錄**](https://ccjou.wordpress.com/)是周老師的部落格，我從線代啟示錄上獲得到過許多的幫助及啟發。除了精美的圖例講解外，各主題都有非常詳細的證明，不論是否為數學愛好者，都可以在當中獲得需要的資訊。
+推薦：[**線代啟示錄**](https://ccjou.wordpress.com/)是周老師的部落格，我從線代啟示錄上獲得過許多的幫助及啟發。除了精美的圖例講解外，各主題都有非常詳細的證明，不論是否為數學愛好者，都可以在當中獲得需要的資訊。
 
 
 ## Gradient Descent
 
-![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic12.GIF)
+![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic13.GIF)
 
 
 
