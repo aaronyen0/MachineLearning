@@ -100,5 +100,59 @@ Cost function在衡量整體模型的訓練效果，這邊採用：
 ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic13.GIF)
 
 
+[梯度下降法](https://en.wikipedia.org/wiki/Gradient_descent)：
+如果實值函數F(x)在點 a 處`可微且有定義`。
+那麼函數F(x)在 a 點，沿著`梯度`相反方向，也就是-▽F(a)方向的下降速率最快。
+因此對alpha > 0且數字夠小時，假設 b = a - alpha * ▽F(a)，則 F(b) <= F(a)。
+
+
+回到本例，給定一組初始值a，可得J在a點的梯度：
+
+![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic14.GIF)
+
+### 學習效率 alpha
+
+若還記得當初怎麼學習微積分，一定不會對以下的敘述陌生：當函數在某個點附近滿足某些條件，對所有足夠小的epsilon，以這個點為中心，半徑epsilon的範圍內，這個函數會維持著某些性質...bla bla bla
+
+在梯度下降法裡面，alpha間接扮演epsilon的角色，我們知道往梯度方向`走一點點`可以找到更佳的解，但是卻不知這一點點容許範圍多少，alpha太小會造成收斂效率極差，alpha太大則會造成參數震盪甚至整個發散，之前看過某些backtrack的方法是先做迴測再決定alpha值(特別在有限制式的最佳化問題，為了怕變數超出限制式範圍，常會先測試alpha是否合理)，下面舉一些簡單的圖例：
+
+- 下圖 z0初始值皆是0，也就是最左上角的點
+- 左上：可以發現alpha很小的時候要疊代很多次才會收斂
+- 右上：隨著alpha稍大之後收斂速度就提高了
+- 左下：本例的alpha在超過0.5後，變數開始震盪，不過還是會收斂
+- 右下：alpha接近1的時候，變數震盪的很明顯，不過依然會收斂
+
+![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic15.GIF)
+
+- 下圖 alpha = 1.1、z0初始值是20，也就是最下面的點
+- 由於alpha設得太大，造成步寬太遠，反而造成疊代後越來越發散
+
+![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic16.GIF)
+
+- 在這些case中，alpha設0.6是收斂最快的(有震盪)，但設0.3可能是最理想的。
+- 不過那也只是本例太過單純且容易觀察，事實上DP架構中動輒上萬參數，縱使是分層疊代，但在同一層中要找到合適的alpha也是相當有挑戰性的事情
+
+#### [**牛頓法**](https://en.wikipedia.org/wiki/Newton%27s_method)
+
+大家都知道在連續可微函數中，若存在極值，其梯度必然是0，因此上述的梯度下降法問題，可以轉換成梯度為0的問題，這個時候有一個很常見的數值方法叫牛頓法。
+
+牛頓法其實也是梯度法的一種，他較特別的地方在，牛頓法是根據導數的值來決定步長，因此我們並不用擔心alpha值設多少，但是相較梯度下降法，個人覺得牛頓法對函數的特性和初始值的要求比較嚴格。 (例如：縱使是一個嚴格遞減或遞增的函數，若在疊代範圍及解的附近，二階導數沒有維持同方向，則很可能發散掉，這種發散方式有點類似經濟學中的[蛛網理論](https://wiki.mbalib.com/zh-tw/%E8%9B%9B%E7%BD%91%E7%90%86%E8%AE%BA))。
+
+### 初始值
+
+只要是梯度法，就會遇到初始值的問題，不難想像在不同的初始位置，最終會落在不同的洞裡。
+
+![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic17.GIF)
+
+常與梯度法互相映照的就是一些隨機打點方法，隨機打點適合用在函數較複雜或是難以微分的時候，常見如基因演算法、PSO...等。
+
+雖然隨機打點方法同樣有初始值的問題，但隨著隨機性提高，可以較廣域的搜尋極值，但就我所知，一般公司並不太願意使用這些方法，主要原因之一是，隨機打點在同一個情境下，有機會產生不同結果。
+
+
+
+## Gradient Descent on n examples
+
+![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic18.GIF)
+
 
 <br><br><br><br><br><br><br><br>
