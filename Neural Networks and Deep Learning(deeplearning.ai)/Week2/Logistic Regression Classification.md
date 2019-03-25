@@ -1,4 +1,4 @@
-# Logistic Regression as a Neural Network 等整篇上完再決定正式主題
+# Logistic Regression and Gradient Descent
 
 # Classification
 
