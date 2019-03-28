@@ -289,7 +289,7 @@
     plt.show()
     ```
     
-    ![](https://i.imgur.com/r6mxgTL.gif)
+    ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic19.GIF)
     
     You can see the cost decreasing. It shows that the parameters are being learned. However, you see that you could train the model even more on the training set. Try to increase the number of iterations in the cell above and rerun the cells. You might see that the training set accuracy goes up, but the test set accuracy goes down. This is called overfitting.
     
@@ -325,7 +325,7 @@
     plt.title("Red:TrainAccuracy, Blue:TestAccuracy")
     plt.show()   
     ```
-    ![](https://i.imgur.com/oXgDjrT.gif)
+    ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic20.GIF)
 
 
 ## Further analysis (optional/ungraded exercise)
@@ -374,7 +374,7 @@
     """
     ```
     
-    ![](https://i.imgur.com/J8QUoOm.gif)
+    ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic21.GIF)
 
     - **Interpretation:**
 
