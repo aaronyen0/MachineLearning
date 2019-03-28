@@ -3,7 +3,7 @@
 
 **What you need to remember:**
 
-Common steps for pre-processing a new dataset are:
+## Common steps for pre-processing a new dataset are:
 - Figure out the dimensions and shapes of the problem (m_train, m_test, num_px, ...)
     ```python
     train_set.shape
@@ -21,8 +21,9 @@ Common steps for pre-processing a new dataset are:
     #train_set_x = train_set_flatten / 255.0
     ```
     
-**In this exercise, you will carry out the following steps:**
-- Create functions and Initialize the parameters of the model
+## In this exercise, you will carry out the following steps:
+
+- **Create functions and Initialize the parameters of the model**
 
     **1. sigmoid function**
     ```python
@@ -113,7 +114,8 @@ Common steps for pre-processing a new dataset are:
         - Now, you want to update the parameters using gradient descent.
 
 
-- Learn the parameters for the model by minimizing the cost  
+- **Learn the parameters for the model by minimizing the cost**
+
     ```python
     def optimize(w, b, X, Y, num_iterations, learning_rate, print_cost = False):
         """
@@ -171,7 +173,7 @@ Common steps for pre-processing a new dataset are:
 
 
 
-- Use the learned parameters to make predictions (on the test set)
+- **Use the learned parameters to make predictions (on the test set)**
 
     **1. GRADED FUNCTION: predict**
     
@@ -213,6 +215,7 @@ Common steps for pre-processing a new dataset are:
     
     
     **2. GRADED FUNCTION: predict**
+    
     ```python
     def model(X_train, Y_train, X_test, Y_test, num_iterations = 2000, learning_rate = 0.5, print_cost = False):
         """
@@ -261,8 +264,10 @@ Common steps for pre-processing a new dataset are:
         return d    
     ```
     
-- Analyse the results and conclude
-    **1. Example of a picture that was wrongly classified.**
+## Analyse the results and conclude
+
+- **Example of a picture that was wrongly classified.**
+    
     ```python
     index = 1
     # 記得要把flatten後的矩陣轉回RPG格式 height * width * channel
@@ -270,7 +275,7 @@ Common steps for pre-processing a new dataset are:
     print ("y = " + str(test_set_y[0,index]) + ", you predicted that it is a \"" + classes[d["Y_prediction_test"][0,index]].decode("utf-8") +  "\" picture.")
     ```
     
-    **2. Plot learning curve (with costs)**
+- **Plot learning curve (with costs)**
     ```python
     costs = np.squeeze(d['costs'])
     plt.plot(costs)
@@ -285,7 +290,7 @@ Common steps for pre-processing a new dataset are:
     You can see the cost decreasing. It shows that the parameters are being learned. However, you see that you could train the model even more on the training set. Try to increase the number of iterations in the cell above and rerun the cells. You might see that the training set accuracy goes up, but the test set accuracy goes down. This is called overfitting.
     
     
-    **2. Plot accuracy curve**
+- **Plot accuracy curve**
     ```python
     train_accuracy = []
     test_accuracy = []
@@ -318,10 +323,10 @@ Common steps for pre-processing a new dataset are:
     ![](https://i.imgur.com/oXgDjrT.gif)
 
 
-- Further analysis (optional/ungraded exercise)
+## Further analysis (optional/ungraded exercise)
 
-    **1. Choice of learning rate**
-     In order for Gradient Descent to work you must choose the learning rate wisely. The learning rate  αα  determines how rapidly we update the parameters. If the learning rate is too large we may "overshoot" the optimal value. Similarly, if it is too small we will need too many iterations to converge to the best values. That's why it is crucial to use a well-tuned learning rate.
+- **Choice of learning rate**
+    In order for Gradient Descent to work you must choose the learning rate wisely. The learning rate  αα  determines how rapidly we update the parameters. If the learning rate is too large we may "overshoot" the optimal value. Similarly, if it is too small we will need too many iterations to converge to the best values. That's why it is crucial to use a well-tuned learning rate.
      
     ```python
     learning_rates = [0.01, 0.001, 0.0001]
@@ -380,7 +385,7 @@ Common steps for pre-processing a new dataset are:
         6. If your model overfits, use other techniques to reduce overfitting. (We'll talk about this in later videos.)
 
 
-- Test with your own image (optional/ungraded exercise)
+- **Test with your own image (optional/ungraded exercise)**
 
     - **We preprocess the image to fit your algorithm.**
     ```python
@@ -400,17 +405,21 @@ Common steps for pre-processing a new dataset are:
     
 
 
-- What to remember from this assignment:
+## What to remember from this assignment:
 
-    - Preprocessing the dataset is important.
-    - You implemented each function separately: initialize(), propagate(), optimize(). Then you built a model().
-    - Tuning the learning rate (which is an example of a "hyperparameter") can make a big difference to the algorithm. You will see more examples of this later in this course!
+- Preprocessing the dataset is important.
+
+- You implemented each function separately: initialize(), propagate(), optimize(). Then you built a model().
+
+- Tuning the learning rate (which is an example of a "hyperparameter") can make a big difference to the algorithm. You will see more examples of this later in this course!
 
 
-- Finally, if you'd like, we invite you to try different things on this Notebook. Make sure you submit before trying anything. Once you submit, things you can play with include:
+- Try and play with include:
  
     - Play with the learning rate and the number of iterations
+
     - Try different initialization methods and compare the results
+
     - Test other preprocessings (center the data, or divide each row by its standard deviation)
 
 
