@@ -4,6 +4,7 @@
 **What you need to remember:**
 
 ## Common steps for pre-processing a new dataset are:
+
 - Figure out the dimensions and shapes of the problem (m_train, m_test, num_px, ...)
     ```python
     train_set.shape
@@ -26,6 +27,7 @@
 - **Create functions and Initialize the parameters of the model**
 
     **1. sigmoid function**
+    
     ```python
     def sigmoid(z):
         """
@@ -44,6 +46,7 @@
     ```
     
     **2. 初始化參數**
+    
     ```python
     def initialize_with_zeros(dim):
         """
@@ -68,6 +71,7 @@
     
     
     **3. 有了參數(w,b)跟X,Y，便能計算cost function 及 gradient**
+    
     ```python
     def propagate(w, b, X, Y):
         """
@@ -291,6 +295,7 @@
     
     
 - **Plot accuracy curve**
+
     ```python
     train_accuracy = []
     test_accuracy = []
@@ -326,6 +331,7 @@
 ## Further analysis (optional/ungraded exercise)
 
 - **Choice of learning rate**
+
     In order for Gradient Descent to work you must choose the learning rate wisely. The learning rate  αα  determines how rapidly we update the parameters. If the learning rate is too large we may "overshoot" the optimal value. Similarly, if it is too small we will need too many iterations to converge to the best values. That's why it is crucial to use a well-tuned learning rate.
      
     ```python
@@ -388,6 +394,7 @@
 - **Test with your own image (optional/ungraded exercise)**
 
     - **We preprocess the image to fit your algorithm.**
+    
     ```python
     # 設定檔名路徑
     my_image = "my_image.jpg"   # change this to the name of your image file 
