@@ -327,6 +327,9 @@
     ```
     ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic20.GIF)
 
+    上圖標示了訓練集還有測試集隨著疊代次數增加，辨識準確率的變化，可以發現縱使訓練集正確率到達了99%以上，測試集的正確率也不會持續收斂，明顯的有overfitting的情況，但這並不代表我們應該減少疊代次數。
+    
+    事實上影響正確率的原因很多，我目前只能大致歸類於模型還不夠完整。
 
 ## Further analysis (optional/ungraded exercise)
 
@@ -378,17 +381,17 @@
 
     - **Interpretation:**
 
-        1. Different learning rates give different costs and thus different predictions results.
+        - Different learning rates give different costs and thus different predictions results.
 
-        2. If the learning rate is too large (0.01), the cost may oscillate up and down. It may even diverge (though in this example, using 0.01 still eventually ends up at a good value for the cost).
+        - If the learning rate is too large (0.01), the cost may oscillate up and down. It may even diverge (though in this example, using 0.01 still eventually ends up at a good value for the cost).
 
-        3. A lower cost doesn't mean a better model. You have to check if there is possibly overfitting. It happens when the training accuracy is a lot higher than the test accuracy.
+        - A lower cost doesn't mean a better model. You have to check if there is possibly overfitting. It happens when the training accuracy is a lot higher than the test accuracy.
 
-        4. In deep learning, we usually recommend that you:
+        - In deep learning, we usually recommend that you:
 
-        5. Choose the learning rate that better minimizes the cost function.
+        - Choose the learning rate that better minimizes the cost function.
 
-        6. If your model overfits, use other techniques to reduce overfitting. (We'll talk about this in later videos.)
+        - If your model overfits, use other techniques to reduce overfitting. (We'll talk about this in later videos.)
 
 
 - **Test with your own image (optional/ungraded exercise)**
