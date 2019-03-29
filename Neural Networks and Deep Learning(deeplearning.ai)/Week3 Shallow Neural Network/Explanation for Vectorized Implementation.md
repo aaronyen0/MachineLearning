@@ -1,4 +1,4 @@
-# Shallow Neural Network
+# Shallow Neural Network - Explanation for Vectorized Implementation
 
 ## Recall Logistic Regression
 
