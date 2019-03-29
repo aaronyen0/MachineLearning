@@ -47,7 +47,7 @@ Given n pairwise datas:
 
 ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic7.GIF)
 
-## Loss Function & Coss Function
+## Loss Function & Cost Function
 
 ![](https://github.com/worcdlo/MachineLearning/blob/master/Neural%20Networks%20and%20Deep%20Learning(deeplearning.ai)/Teaching%20Material/L2_pic8.GIF)
 
