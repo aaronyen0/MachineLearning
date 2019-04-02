@@ -55,7 +55,7 @@
     ![](https://i.imgur.com/vgrie4E.png)
 
 - **Logistic or Sigmoid**
-    - in rnage (0,1)
+    - in range (0,1)
     - 常見於神經網路
     
     ![](https://i.imgur.com/Tv3LFBy.png)
@@ -80,6 +80,7 @@
 - **Leaky ReLu**
     - 相較於ReLu，落於負數的部分有正斜率，不過相較於正數的部分低
     - 用來解決ReLu中落於負數的因子從此失效的問題
+    - 常見 max(z, 0.01z)，至於為何是0.01待嘗試
     
     ![](https://i.imgur.com/EUgn9jg.png)
 
@@ -108,3 +109,7 @@
 - Tanh
     - In some cases the sign of the output is relevant, but the magnitude can mess with the further computations.
     -  It’s useful when after the magnitude of unprocessed output grows significantly, the further growth is not that important, and vice versa, when the fluctuations around zero make significant difference.
+    
+- Sigmoid
+    - 除了輸出層之外不建議使用他
+    - 即使使用類似的函數也會先選擇Tanh
