@@ -4,7 +4,8 @@
     
 
 ## **名詞解釋**
-![](https://i.imgur.com/3waLyay.png)
+
+![](https://i.imgur.com/bz1Eay5.png)
 
 
 ## **INQUIRE Framework**
