@@ -21,7 +21,7 @@ class INQUIRE():
     def update_qstn_model(self, qstn_model, wkr_model, ans):
         '''
         qstn_model: QuestionModel
-        wk_model: WorkerModel
+        wkr_model: WorkerModel
         ans: answer from the worker to this question
         '''
         qstn_model.ans_lt.append([wkr_model, ans])
