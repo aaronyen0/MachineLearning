@@ -62,7 +62,7 @@ class INQUIRE():
         else:
             return (true_prob * (1 - gamma)) / (true_prob * (1 - gamma) + (1 - true_prob) * gamma)
 
-def test_sequence():     
+def inquire_test_sequence():     
     sys = INQUIRE()
     q1 = sys.QuestionModel(1)
     
