@@ -19,11 +19,11 @@ class INQUIRE():
 
             
     def update_qstn_model(self, qstn_model, wkr_model, ans):
-        '''
+        """
         qstn_model: question model
         wkr_model: worker model
         ans: answer from the worker to this question
-        '''
+        """
         qstn_model.ans_lt.append([wkr_model, ans])
         ans_num = len(qstn_model.ans_lt)
         qstn_model.true_prob = self.prob_strategy_gamma(qstn_model.true_prob, wkr_model.gamma, ans)
@@ -57,11 +57,11 @@ class INQUIRE():
         wkr_model.gamma = sum1 / sum2
 
     def prob_strategy_gamma(self, true_prob, gamma, ans):
-        '''
+        """
         true_prob: the probability that the question's answer is true
         gamma: worker's accuracy
         ans: answer from the worker to this question
-        '''
+        """
         if ans == 1:
             return (true_prob * gamma) / (true_prob * gamma + (1 - true_prob) * (1 - gamma))
         else:
