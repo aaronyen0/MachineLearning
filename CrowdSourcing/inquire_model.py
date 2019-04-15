@@ -20,8 +20,8 @@ class INQUIRE():
             
     def update_qstn_model(self, qstn_model, wkr_model, ans):
         '''
-        qstn_model: QuestionModel
-        wkr_model: WorkerModel
+        qstn_model: question model
+        wkr_model: worker model
         ans: answer from the worker to this question
         '''
         qstn_model.ans_lt.append([wkr_model, ans])
@@ -40,6 +40,11 @@ class INQUIRE():
 
 
     def update_wkr_model(self, true_prob, wkr_model, ans):
+        """
+        true_prob: the probability that the question's answer is true
+        wkr_model: worker model
+        ans: answer from the worker to this question
+        """
         confusion_matrix = wkr_model.confusion_matrix       
         #ans = 0 or 1, updating worker_model confusion_matrix
         confusion_matrix[ans][0] += (1 - true_prob)
@@ -53,16 +58,16 @@ class INQUIRE():
 
     def prob_strategy_gamma(self, true_prob, gamma, ans):
         '''
-        true_prob:question為true的機率
-        gamma
-        ans:worker對這個question的回答
+        true_prob: the probability that the question's answer is true
+        gamma: worker's accuracy
+        ans: answer from the worker to this question
         '''
         if ans == 1:
             return (true_prob * gamma) / (true_prob * gamma + (1 - true_prob) * (1 - gamma))
         else:
             return (true_prob * (1 - gamma)) / (true_prob * (1 - gamma) + (1 - true_prob) * gamma)
 
-def inquire_test_sequence():     
+def test_sequence():     
     sys = INQUIRE()
     q1 = sys.QuestionModel(1)
     
