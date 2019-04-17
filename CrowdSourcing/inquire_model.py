@@ -19,6 +19,11 @@ class INQUIRE():
             self.true_prob = true_prob
             self.ans_lt = []
             self.qstn_result = -1
+            
+    class AnsInfo():
+        def  __init__(self, wrk_model, ans):
+            self.wrk_model = wrk_model
+            self.ans = ans
 
             
     def update_qstn_model(self, qstn_model, wkr_model, ans):
@@ -27,7 +32,7 @@ class INQUIRE():
         wkr_model: worker model
         ans: answer from the worker to this question
         '''
-        qstn_model.ans_lt.append([wkr_model, ans])
+        qstn_model.ans_lt.append(self.AnsInfo(wkr_model, ans))
         ans_num = len(qstn_model.ans_lt)
         qstn_model.true_prob = self.prob_strategy_gamma(qstn_model.true_prob, wkr_model.gamma, ans)
         
@@ -45,7 +50,7 @@ class INQUIRE():
                 
             ans_lt = qstn_model.ans_lt
             for j in range(ans_num):
-                self.update_wkr_model(qstn_model.true_prob, ans_lt[j][0], ans_lt[j][1])
+                self.update_wkr_model(qstn_model.true_prob, ans_lt[j].wrk_model, ans_lt[j].ans)
 
 
     def update_wkr_model(self, true_prob, wkr_model, ans):
@@ -64,16 +69,16 @@ class INQUIRE():
         
 
     def prob_strategy_gamma(self, true_prob, gamma, ans):
-        '''
+        """
         true_prob: the probability that the question's answer is true
         gamma: worker's accuracy
         ans: answer from the worker to this question
-        '''
+        """
         if ans == 1:
             return (true_prob * gamma) / (true_prob * gamma + (1 - true_prob) * (1 - gamma))
         else:
             return (true_prob * (1 - gamma)) / (true_prob * (1 - gamma) + (1 - true_prob) * gamma)
-
+'''
 def test_sequence():     
     sys = INQUIRE()
     w0 = sys.WorkerModel(0)
@@ -88,5 +93,5 @@ def test_sequence():
     sys.update_qstn_model(q1, worker_lt[6], 0)
     
     print(w0.confidence, w0.confidence_array, q1.true_prob)
-    
+'''    
     
