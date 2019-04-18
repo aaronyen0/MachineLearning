@@ -1,13 +1,34 @@
 class INQUIRE():
+    """ 
+    Implement the paper: Incremental Quality Inference in Crowdsourcing (INQUIRE)
+    There are some different to the paper:
+        1. adding the contributor and the contributor's rating method by statistic of confidence array
+        2. the question's initial true-probability is given by the contributor's confidence
+    
+    Attributes:
+        wkr_update_thres: a positive integer deonotes that the vote number each question need
+    """
+    
     def  __init__(self, wkr_update_thres = 7):
+        """Initial the INQUIRE"""
         self.wkr_update_thres = wkr_update_thres
 
         
     class WorkerModel():
+        """
+        store datas of a worker's past performance
+        
+        Attributes:
+            ID: an unique and non-negative integer represents as a worker's ID
+            confusion_matrix: a 2*2 matrix (list[list(float, float)]) that statistics the worker's past voting result
+            gamma: a float that denotes the worker's past voting accuracy
+            confidence_array: a list(float, flaot) that statistics the worker's past contribution
+            confidence: a float that denotes the worker's past contributing accuracy
+        """
         def  __init__(self, wkr_ID):
             self.ID = wkr_ID
-            self.confusion_matrix = [[0.3, 0.2], [0.2, 0.3]]
-            self.gamma = 0.6
+            self.confusion_matrix = [[0.27, 0.23], [0.23, 0.27]]
+            self.gamma = 0.54
             self.confidence_array = [0.5, 0.5]
             self.confidence = 0.5
 
@@ -27,11 +48,11 @@ class INQUIRE():
 
             
     def update_qstn_model(self, qstn_model, wkr_model, ans):
-        '''
+        """
         qstn_model: question model
         wkr_model: worker model
         ans: answer from the worker to this question
-        '''
+        """
         qstn_model.ans_lt.append(self.AnsInfo(wkr_model, ans))
         ans_num = len(qstn_model.ans_lt)
         qstn_model.true_prob = self.prob_strategy_gamma(qstn_model.true_prob, wkr_model.gamma, ans)
