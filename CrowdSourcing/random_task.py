@@ -1,29 +1,32 @@
-"""
-使用方法
-step1:rt = RandTask([3,2,4,1])
-引數陣列放的是每個任務出現的相對次數(>=0)，可以為整數或浮點數
-因此本例有4個task，每個task出現的機率分別為
-P(task[0]) = 0.3
-P(task[1]) = 0.2
-P(task[2]) = 0.4
-P(task[3]) = 0.1
-
-step2：rt.get_random_task_idx()
-回傳一個整數
-若是-1，代表初始化時的引數不符合規則
-其餘則是根據任務出現的機率抽出一個任務代號
-"""
 import random
 
 class RandTask():
+    """Summary of RandTask
+    Getting a random index according to the given relative frequency list.
+
+    Attributes:
+        check: a boolean indicating if the RandTask has been initialized successfully
+        task_num: an integer indicating number of tasks
+        task_prob: an float list indicating the probability of each task
+        task_thres: an float list used for comupting random task index
+    """
+    
     def  __init__(self, freq_lt):
-        self.check = False
+        """
+        Inits RandTask and check if the freq_lt is correct.
         
+        Args:
+            freq_lt: a float list store all tasks' relative frequency. For example:
+                freq_lt = [2.0, 3.0, 1.0, 4.0] 
+                It means that there are four tasks with task index 0 to 3. And the tasks' occur 
+                probability are 0.2, 0.3, 0.1 and 0.4 respectively.
+        """
+        self.check = False        
         if type(freq_lt) != list: 
             return
         
         self.task_num = len(freq_lt)
-        if(self.task_num < 0): 
+        if(self.task_num <= 0): 
             return
     
         for i in range(self.task_num):
@@ -34,12 +37,6 @@ class RandTask():
         if(freq_sum <= 0): 
             return
         
-        '''
-        建立一個累積機率表，給binary search輸出taskIdx使用
-        最後一格重寫為2.0一方面是蓋掉累加時的浮點誤差
-        另一方面search的規則是左閉右包，但是累積機率剛好1.0時是特例[)[)[)[)[]
-        若random = 1.0必須要被歸類在最後一個task，因此累積表的末欄放的數字要超過1.0
-        '''
         self.task_prob = freq_lt.copy()
         self.task_thres = [0.0] * (self.task_num + 1)
         for i in range(self.task_num):
@@ -49,7 +46,15 @@ class RandTask():
         
         self.check = True
         
+        
     def get_random_task_idx(self):
+        """
+        Get a random task index
+        
+        Return:
+            -1 if the check = True or
+            a task index by realtive frequency
+        """
         if self.check == False: 
             return -1
         
