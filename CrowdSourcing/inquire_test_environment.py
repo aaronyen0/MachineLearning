@@ -33,7 +33,7 @@ class InquireTestEnv():
         self.sys = inquire_model.INQUIRE(9)
         
         #Add some workers
-        for i in range(20):
+        for i in range(100):
             self.add_worker()
             
         for i in range(100):
@@ -127,15 +127,24 @@ class InquireTestEnv():
                     self.wkr_list[i].gamma, self.wkr_list[i].confidence))
 
             
-    def show_question_list(self, offset = 0, num = 10):
-        if(offset + num > self.qstn_num):
-            offset = 0
-            num = self.qstn_num
-        for i in range(offset, offset + num):
-            print("[%3d] real_result = %d, predict: prob = %1.3f, result = %d" %(i, self.real_qstn_list[i].result,
-                  self.qstn_list[i].true_prob, self.qstn_list[i].qstn_result))
+    def show_question_list(self, offset = 0, num = 10, show_wrong_ans = 0):
+        if show_wrong_ans == 0:
+            if(offset + num > self.qstn_num):
+                offset = 0
+                num = self.qstn_num
+            for i in range(offset, offset + num):
+                print("[%3d] real_result = %d, predict: prob = %1.3f, result = %d" %(i, self.real_qstn_list[i].result,
+                      self.qstn_list[i].true_prob, self.qstn_list[i].qstn_result))
+        else:
+            for i in range(offset, self.qstn_num):
+                if(self.qstn_list[i].qstn_result != self.real_qstn_list[i].result):
+                    print("[%3d] real_result = %d, predict: prob = %1.3f, result = %d" %(i, self.real_qstn_list[i].result,
+                          self.qstn_list[i].true_prob, self.qstn_list[i].qstn_result))
+                    num -= 1
+                    if(num <= 0):
+                        break;
                     
-       
+                   
     def test_summary(self):
         p_true = 0
         p_false = 0
