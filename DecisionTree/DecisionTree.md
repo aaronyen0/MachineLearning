@@ -6,6 +6,8 @@
 
 - [Wiki: Decision Tree](https://en.wikipedia.org/wiki/Decision_tree_learning)
 
+- [决策树之CART算法](https://blog.csdn.net/ACdreamers/article/details/44664481)
+
 ## Introduction
 
 ![](https://i.imgur.com/OSIEhsY.png)
@@ -18,7 +20,13 @@
 ![](https://i.imgur.com/Zq8K99I.png)
 
 ### 常見的資訊量有兩種：熵(Entropy) 以及 Gini不純度(Gini Impurity)
-- ![](https://i.imgur.com/991PyST.png)
+
+- Entropy
+    - ![](https://i.imgur.com/6EIIjmp.png)
+
+- Gini
+    - ![](https://i.imgur.com/MASpUpW.png)
+
 
 - Example
 
@@ -89,3 +97,28 @@
             - I(single) = 1 - 0.5^2 - 0.5^2 = 0.5
             - I(others) = 1 - 0.75^2 - 0.25^2 = 0.375
             - IG = 0.42 - 0.2\*0.5 - 0.8\*0.375 = 0.02
+
+    - Comparity: **Information Gain** on marriage
+        
+        ||Entropy|Gini Impurity|
+        |-|-|-|
+        |single|0.09|0.05|
+        |married|**0.28**|**0.12**|
+        |divorced|0.03|0.02|
+        
+        - 兩種標準都認為用married切割節點，能讓IG最大
+
+## CART (Classification And Regression Trees)
+CART算法是一種二分遞歸分割技術，把當前樣本劃分為兩個子樣本，使得生成的每個非葉子結點都有兩個分支。
+
+因此CART算法生成的決策樹是結構簡潔的二叉樹。由於CART算法構成的是一個二叉樹，它在每一步的決策時只能分為「是」或「否」，即使一個feature有多個取值，也是把數據分為兩部分。在CART算法中主要分為兩個步驟
+
+- 將樣本遞歸劃分進行建樹過程
+- 用驗證數據進行剪枝
+
+### CART算法的原理
+設(x_1, ..., x_m)代表單個樣本的m種屬性，y表示所屬類別。 CART算法通過遞歸的方式將m維的空間劃分為不重疊的矩形。劃分步驟大致如下
+
+- (1) 選一個自變量x_i，再選取x_i中的一個值v，v把m維空間劃分為兩部分，一部分的所有點都滿足x_i <= v，另一部分的所有點都滿足x_i > v，對非連續變量來說屬性值的取值只有兩個，即等於該值或不等於該值。
+
+- (2) 遞歸處理，將上面得到的兩部分按步驟(1)重新選取一個屬性繼續劃分，直到把整個維空間都劃分完。
